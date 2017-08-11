@@ -410,7 +410,8 @@ add_action( 'wp_head', 'mytheme_colors_css_wrap' );
  */
 function mytheme_scripts() {
 
-    
+    // creative .css
+	wp_enqueue_style('creative-css', get_template_directory_uri() . '/assets/css/creative.css', array() , '1.1', 'all' );
     
     //Jquery JS
 	wp_enqueue_script( 'jquery-js', get_template_directory_uri() . '/assets/js/jquery.min.js', array ( 'jquery' ), 1.1, true);    

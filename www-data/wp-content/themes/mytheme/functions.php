@@ -60,7 +60,7 @@ function mytheme_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'top'    => __( 'Top Menu', 'mytheme' ),
+		'main-menu'    => __( 'Main Menu', 'mytheme' ),
 		'social' => __( 'Social Links Menu', 'mytheme' ),
 	) );
 
@@ -416,11 +416,13 @@ function mytheme_scripts() {
     //Jquery JS
 	wp_enqueue_script( 'jquery-js', get_template_directory_uri() . '/assets/js/jquery.min.js', array ( 'jquery' ), 1.1, true);    
 
+	// Scripts JS
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/scripts.js', array ( 'jquery' ), 1.1, true);
+	
     // Functions JS
 	wp_enqueue_script( 'functions', get_template_directory_uri() . '/assets/js/functions.min.js', array ( 'jquery' ), 1.1, true);
     
-    // Scripts JS
-	wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/scripts.min.js', array ( 'jquery' ), 1.1, true);
+    
 }
 add_action( 'wp_enqueue_scripts', 'mytheme_scripts' );
 
